@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Dorado - Vinos</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- Pantalla de Inicio -->
+    <div id="start-screen" class="screen active">
+        <img src="img/fondo.jpeg" alt="Fondo Inicio" class="background">
+        <div class="content">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <h1>El Dorado</h1>
+            <p>El arte en cada copa</p>
+            <button id="start-button">Empezar</button>
+        </div>
+    </div>
+
+    <!-- Pantalla de Login -->
+    <div id="login-screen" class="screen">
+        <img src="img/fondo.jpeg" alt="Fondo Login" class="background">
+        <div class="content">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <h1>El Dorado</h1>
+            <form id="login-form">
+                <input type="email" id="email" placeholder="Email">
+                <input type="password" id="password" placeholder="Password">
+                <button type="submit">Siguiente</button>
+                <button type="button" id="register-button">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pantalla de Registro -->
+    <div id="register-screen" class="screen">
+        <img src="img/fondo.jpeg" alt="Fondo Registro" class="background">
+        <div class="content">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <h1>Registrarse en El Dorado</h1>
+            <form id="register-form">
+                <input type="email" id="new-email" placeholder="Nuevo Email">
+                <input type="password" id="new-password" placeholder="Nuevo Password">
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pantalla de Eventos -->
+    <div id="events-screen" class="screen">
+        <img src="img/fondo.jpeg" alt="Fondo Eventos" class="background">
+        <div class="navbar">
+            <div class="menu-container">
+                <div class="menu-icon" id="menu-button">☰</div>
+                <div class="menu">
+                    <button id="category-button">Categorías</button>
+                    <button id="favorites-button">Favoritos</button>
+                    <button id="events-button">Eventos</button>
+                    <button id="calendar-button">Calendario</button>
+                    <button id="logout-button">Cerrar sesión</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Bienvenido a El Dorado</h1>
+            <h2>Eventos de Hoy <span id="day-selector">Lunes</span></h2>
+            <div class="day-selector">
+                <button id="previous-day">&lt;</button>
+                <button id="next-day">&gt;</button>
+            </div>
+            <div id="events-list" class="carousel">
+                <div class="event-item" id="copa-vino">
+                    <img src="img/copavino.jpg" alt="CopaVino">
+                    <p>CopaVino</p>
+                </div>
+                <div class="event-item" id="vino-fest">
+                    <img src="img/vinofest.jpg" alt="VinoFest">
+                    <p>VinoFest</p>
+                </div>
+                <div class="event-item" id="wine-up">
+                    <img src="img/wineup.webp" alt="WineUp">
+                    <p>WineUp</p>
+                </div>
+                <div class="event-item" id="vinorama">
+                    <img src="img/vinorama.jpeg" alt="Vinorama">
+                    <p>Vinorama</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla de Calendario -->
+    <div id="calendar-screen" class="screen">
+        <img src="img/fondo.jpeg" alt="Fondo Calendario" class="background">
+        <div class="navbar">
+            <button id="back-button">Volver</button>
+        </div>
+        <div class="content">
+            <h1>Calendario</h1>
+            <div id="calendar-container">
+                <div id="calendar-header">
+                    <button id="prev-month">&lt;</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month">&gt;</button>
+                </div>
+                <div id="calendar"></div>
+            </div>
+            <div id="event-form" style="display: none;">
+                <h3>Agregar Evento</h3>
+                <input type="text" id="event-title" placeholder="Título del evento">
+                <input type="datetime-local" id="event-datetime">
+                <input type="color" id="event-color" value="#000000">
+                <button id="save-event">Guardar Evento</button>
+              </div>
+        </div>
+    </div>
+        <!-- Pantalla de Categorías -->
+<div id="categories-screen" class="screen">
+    <img src="img/fondo.jpeg" alt="Fondo Categorías" class="background">
+    <div class="navbar">
+        <button id="back-button-categories" class="back-button">Volver</button>
+        <div class="menu-container">
+            <div class="menu-icon" id="menu-button-categories">☰</div>
+            <div class="menu">
+                <button id="events-button-categories">Eventos</button>
+                <button id="favorites-button-categories">Favoritos</button>
+                <button id="calendar-button-categories">Calendario</button>
+                <button id="logout-button-categories">Cerrar sesión</button>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Categorías de Vino</h1>
+        <div class="categories-grid">
+            <div class="category-item" data-id="tinto">
+                <div class="category-image-container">
+                    <img src="img/vinos tintos.webp" alt="Vino Tinto">
+                    <button class="favorite-btn">❤</button>
+                </div>
+                <p>Tinto</p>
+            </div>
+            <div class="category-item" data-id="blanco">
+                <div class="category-image-container">
+                    <img src="img/vinosblanco.webp" alt="Vino Blanco">
+                    <button class="favorite-btn">❤</button>
+                </div>
+                <p>Blanco</p>
+            </div>
+            <div class="category-item" data-id="rosado">
+                <div class="category-image-container">
+                    <img src="img/vinorosado.jpeg" alt="Vino Rosado">
+                    <button class="favorite-btn">❤</button>
+                </div>
+                <p>Rosado</p>
+            </div>
+            <div class="category-item" data-id="espumoso">
+                <div class="category-image-container">
+                    <img src="img/vinoespumoso.jpg" alt="Vino Espumoso">
+                    <button class="favorite-btn">❤</button>
+                </div>
+                <p>Espumoso</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Pantalla de Favoritos -->
+<div id="favorites-screen" class="screen">
+    <img src="img/fondo.jpeg" alt="Fondo Favoritos" class="background">
+    <div class="navbar">
+        <button id="back-button-favorites" class="back-button">Volver</button>
+        <div class="menu-container">
+            <div class="menu-icon" id="menu-button-favorites">☰</div>
+            <div class="menu">
+                <button id="events-button-favorites">Eventos</button>
+                <button id="categories-button-favorites">Categorías</button>
+                <button id="calendar-button-favorites">Calendario</button>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Mis Favoritos</h1>
+        <div id="favorites-grid" class="categories-grid">
+
+        </div>
+    </div>
+</div>
+
+<!-- Pantalla de Lista de Eventos -->
+<div id="event-list-screen" class="screen">
+    <img src="img/fondo.jpeg" alt="Fondo Lista de Eventos" class="background">
+    <div class="navbar">
+        <button id="back-button-event-list" class="back-button">Volver</button>
+        <div class="menu-container">
+            <div class="menu-icon" id="menu-button-event-list">☰</div>
+            <div class="menu">
+                <button id="categories-button-event-list">Categorías</button>
+                <button id="favorites-button-event-list">Favoritos</button>
+                <button id="calendar-button-event-list">Calendario</button>
+                <button id="logout-button-event-list">Cerrar sesión</button>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Mis Eventos</h1>
+        <div id="event-list-container">
+        </div>
+    </div>
+</div>
+
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
